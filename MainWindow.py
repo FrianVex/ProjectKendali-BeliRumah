@@ -1,6 +1,7 @@
 # Imported UI Files
 from FrontUIVer110 import Ui_MainWindow
 from Account import Account
+from PerhitunganKredit import HitungKredit
 import AppIcons_rc
 
 # Needed Libraries
@@ -20,6 +21,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.accounts = Account()
+        self.kredit = HitungKredit()
 
         # Stored Flags
         self.is_login = False
@@ -61,6 +63,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.SimpanDataButton.clicked.connect(self.process_account_data)
         self.ProcessResetPassword.clicked.connect(self.process_reset_password_email)
         self.DashboardEditDataButton.clicked.connect(self.logout_data)
+
+        # Kredit
+        self.BungaTetapcheckBox.setChecked(True)
+        self.BungaTetapcheckBox.stateChanged.connect(self.set_page_fixed_rate)
+        self.BungaBerjenjangcheckBox.stateChanged.connect(self.set_page_layered_rate)
+        self.PerhitunganKPRCalculateButton.clicked.connect(self.process_kredit_calculations)
 
         # Set up the First Condition to Boot up the Program
         self.ContentFrame.setCurrentIndex(0)
@@ -138,9 +146,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def list_rumah_page(self):
         self.ContentFrame.setCurrentIndex(0)
 
-    def kredit_page(self):
-        self.ContentFrame.setCurrentIndex(3)
-
     def beli_page(self):
         self.ContentFrame.setCurrentIndex(4)
 
@@ -190,7 +195,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
 
 # Account Functions______________________________________________________________________________________________________________________
-    # Login Functions
+    
+    # Handles Login
     def login_page(self):
         self.ResetPasswordContainer.hide()
         self.LoginLabelStatus.hide()
@@ -216,7 +222,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.LoginLabelStatus.setText("Username atau Password Salah!")
             self.PasswordBox.clear()
 
-    # Register Functions
+    # Handles Logout
+    def logout_data(self):
+        self.is_login = False # Ain't that so shrimple?
+        self.ProfilePageLoginContainer.show()
+        self.ProfilePagePhotoContainer.hide()
+        self.DashboardControlContainer.hide()
+        self.ContentFrame.setCurrentIndex(0)
+
+    # Offended Register
     def register_page(self):
         self.RegisterFlag.hide()
         self.NotificatioFrame.hide()
@@ -230,7 +244,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def process_account_creation(self):
         # I'm Sorry there is no other way to do this
-        if self.is_this_button_clicked == False:
+        if self.is_this_button_clicked == False: # This If Statement Handles the Creation of Account
             parse_username = self.BuatUserBox.toPlainText()
             parse_password = self.BuatPasswordBox.toPlainText()
             parse_repassword = self.RePassBox.toPlainText()
@@ -248,7 +262,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 time.sleep(2)
                 self.RegisterFlag.setText("Silahkan Coba Lagi!")
         
-        else:
+        else:   # This If Statement Handles the Changing of Password
             parse_password = self.BuatPasswordBox.toPlainText()
             parse_repassword = self.RePassBox.toPlainText()
             self.is_match = self.accounts.reset_user_password(parse_password, parse_repassword)
@@ -266,7 +280,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 time.sleep(2)
                 self.RegisterFlag.setText("Silahkan Coba Lagi!")
     
-    def process_account_data(self):
+    def process_account_data(self): # Shrimple Applying Data to the json file
         parse_nama = self.NamaBox.toPlainText()
         parse_pekerjaan = self.PekerjaanBox.toPlainText()
         parse_email = self.AlamatEmailBox.toPlainText()
@@ -283,15 +297,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.is_login = True
         self.ContentFrame.setCurrentIndex(0)
 
-    def logout_data(self):
-        self.is_login = False
-        self.ProfilePageLoginContainer.show()
-        self.ProfilePagePhotoContainer.hide()
-        self.DashboardControlContainer.hide()
-        self.ContentFrame.setCurrentIndex(0)
-
-    # Reset Password
-    def setup_reset_password_email(self):
+    # Reset Balls I mean Password
+    def setup_reset_password_email(self): # Set up the Login Page as Reset Password Page
         self.ResetFlagStatus.hide()
         self.UsernameContainer.hide()
         self.PasswordContainer.hide()
@@ -300,12 +307,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ResetFlagStatus.hide()
         self.ContentFrame.setCurrentIndex(1)
 
-    def process_reset_password_email(self):
+    def process_reset_password_email(self): # Process the Email Searching
         parse_email = self.EmailBox.toPlainText()
         self.is_on_reset_password = self.accounts.search_user_email(parse_email)
 
         if self.is_on_reset_password == True:
-            self.process_reset_password()
+            self.setup_reset_password()
             self.is_on_reset_password = False
         else:
             self.ResetFlagStatus.show()
@@ -313,7 +320,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             time.sleep(2)
             self.ResetFlagStatus.setText("Silahkan Coba Lagi!")
     
-    def process_reset_password(self):
+    def setup_reset_password(self): # Set up the Input New Password Page
         self.KolomData.hide()
         self.RegisterFlag.hide()
         self.BuatUserContainer.hide()
@@ -325,6 +332,65 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 # Kredit Functions______________________________________________________________________________________________________________________
     
+    # We Go calc some Credits
+    def kredit_page(self):
+        self.ContentFrame.setCurrentIndex(3)
+        self.OutputPerhitunganPageContainer.hide()
+
+    def set_page_fixed_rate(self):
+        if self.BungaTetapcheckBox.isChecked() == True:
+            self.BungaBerjenjangcheckBox.setChecked(False)
+            self.TipeTipeBunga.setCurrentIndex(0)
+
+    def set_page_layered_rate(self):
+        if self.BungaBerjenjangcheckBox.isChecked() == True:
+            self.BungaTetapcheckBox.setChecked(False)
+            self.TipeTipeBunga.setCurrentIndex(1)
+
+    # Math Scary
+    def process_kredit_calculations(self):
+        parse_property_value = self.PerhitunganKPRUangMukaTextEdit.toPlainText()
+        parse_down_payment = self.PerhitunganKPRHargaPropertiTextEdit.toPlainText()
+
+        if self.BungaTetapcheckBox.isChecked() == True:
+            parse_intereset_rate = self.PerhitunganKPRMasaKreditLabelTextEdit.toPlainText()
+            parse_fixed_rate_tenor = self.PerhitunganKPRJangkaWaktuKreditTextEdit.toPlainText()
+            parse_maximum_payment_time = self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit.toPlainText()
+
+            parsed_data = self.kredit.fixed_rate(float(parse_property_value), float(parse_down_payment), float(parse_intereset_rate), float(parse_fixed_rate_tenor), float(parse_maximum_payment_time))
+
+            self.OutputPerhitunganPageContainer.show()
+            self.PenulisanHargaJangkaTahunPertamaLabel.setText("Rp. " + str(parsed_data[2]))
+            self.PenulisanHargaJangkaTahunSetelahLabel.setText("Rp. " + str(parsed_data[3]))
+            self.PenulisanHargaEstimasiJumlahBayarLabel.setText("Rp. " + str(parsed_data[4]))
+            self.PenulisanHargaUangMukaLabel.setText("Rp. " + str(parse_down_payment))
+            self.PenulisanHargaAngsuranPertamaLabel.setText("Rp. " + str(parsed_data[2]))
+            self.PenulisanHargaEstimasiPembayaranLabel.setText("Rp. " + str(parsed_data[1]))
+            self.PenulisanHargaDetailPinjamanLabel.setText("Rp. " + str(parsed_data[5]))
+            self.PenulisanHargaPinjamanPokokLabel.setText("Rp. " + str(parsed_data[0]))
+            self.PenulisanHargaEstimasiBungaPinjamanLabel.setText("Rp. " + str(parsed_data[6]))
+        
+        elif self.BungaBerjenjangcheckBox.isChecked() == True:
+            parse_numbers_of_layers = self.spinBox.value()
+            parse_first_interest_rate = self.PerhitunganKPRPersentaseLamaKreditBerjenjangBox.toPlainText()
+            parse_increment_interest_rate = self.EskalasiBungaBox.toPlainText()
+            parse_layered_rate_tenor = self.PerhitunganKPRJangkaWaktuMasaKreditBerjenjang.toPlainText()
+
+            parsed_data = self.kredit.floating_rate(float(parse_property_value), float(parse_down_payment), float(parse_numbers_of_layers), float(parse_first_interest_rate), float(parse_increment_interest_rate), float(parse_layered_rate_tenor))
+            yearly_payment = parsed_data[2]
+
+            self.OutputPerhitunganPageContainer.show()
+            self.HargaJangkaTahunPertamaLabel.setText("Harga Jangka Tahun Pertama dan Setelahnya")
+            self.PenulisanHargaJangkaTahunPertamaLabel.setText("Rp. " + str(parsed_data[2]))
+            self.PenulisanHargaJangkaTahunSetelahLabel.setText("Rp. " + str(parsed_data[3]))
+            self.PenulisanHargaEstimasiJumlahBayarLabel.setText("Rp. " + str(parsed_data[4]))
+            self.PenulisanHargaUangMukaLabel.setText("Rp. " + str(parse_down_payment))
+            self.PenulisanHargaAngsuranPertamaLabel.setText("Rp. " + str(yearly_payment[0]))
+            self.PenulisanHargaEstimasiPembayaranLabel.setText("Rp. " + str(parsed_data[1]))
+            self.PenulisanHargaDetailPinjamanLabel.setText("Rp. " + str(parsed_data[5]))
+            self.PenulisanHargaPinjamanPokokLabel.setText("Rp. " + str(parsed_data[0]))
+            self.PenulisanHargaEstimasiBungaPinjamanLabel.setText("Rp. " + str(parsed_data[6]))
+            
 
 if __name__ == "__main__":
     import sys
