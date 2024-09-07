@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'FrontUIVer1vGWBJc.ui'
+## Form generated from reading UI file 'FrontUIVer1wbjkIS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -437,6 +437,11 @@ class Ui_MainWindow(object):
         self.PreviousButton.setObjectName(u"PreviousButton")
 
         self.horizontalLayout_17.addWidget(self.PreviousButton, 0, Qt.AlignLeft)
+
+        self.KClusterButton = QPushButton(self.HomeNavigateContainer)
+        self.KClusterButton.setObjectName(u"KClusterButton")
+
+        self.horizontalLayout_17.addWidget(self.KClusterButton)
 
         self.NextButton = QPushButton(self.HomeNavigateContainer)
         self.NextButton.setObjectName(u"NextButton")
@@ -1388,7 +1393,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_28.addWidget(self.KontakPengurus)
 
-        self.MatplotlibSketch = QLabel(self.widget_9)
+        self.MatplotlibSketch = QPushButton(self.widget_9)
         self.MatplotlibSketch.setObjectName(u"MatplotlibSketch")
 
         self.horizontalLayout_28.addWidget(self.MatplotlibSketch)
@@ -1804,7 +1809,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.ContentFrame.setCurrentIndex(7)
+        self.ContentFrame.setCurrentIndex(0)
         self.TipeTipeBunga.setCurrentIndex(1)
         self.NotificatioFrame.setCurrentIndex(0)
 
@@ -1835,6 +1840,7 @@ class Ui_MainWindow(object):
         self.Desc_1.setText(QCoreApplication.translate("MainWindow", u"Text Goes Here", None))
         self.Price_1.setText(QCoreApplication.translate("MainWindow", u"Price and Check", None))
         self.PreviousButton.setText(QCoreApplication.translate("MainWindow", u"Previous", None))
+        self.KClusterButton.setText(QCoreApplication.translate("MainWindow", u"Lihat Clustering Harga Rumah", None))
         self.NextButton.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.LoginText.setText(QCoreApplication.translate("MainWindow", u"LOGIN PAGE", None))
         self.LoginLabelStatus.setText(QCoreApplication.translate("MainWindow", u"StatusFlagHere", None))
@@ -1913,7 +1919,7 @@ class Ui_MainWindow(object):
         self.DarkModeCheckBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
         self.AlamatRumah.setText(QCoreApplication.translate("MainWindow", u"AlamatRumah", None))
         self.KontakPengurus.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.MatplotlibSketch.setText(QCoreApplication.translate("MainWindow", u"Tren Grafik Rumah", None))
+        self.MatplotlibSketch.setText(QCoreApplication.translate("MainWindow", u"Lihat Tren Grafik Rumah Ini!", None))
         self.GoBackToHomeButton.setText(QCoreApplication.translate("MainWindow", u"Go Back", None))
         self.DeskripsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.IsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))

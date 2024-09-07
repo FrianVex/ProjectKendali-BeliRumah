@@ -593,7 +593,7 @@ QPushButton{
           <item>
            <widget class="QStackedWidget" name="ContentFrame">
             <property name="currentIndex">
-             <number>7</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="ContentPage">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -759,6 +759,13 @@ QPushButton{
                       <widget class="QPushButton" name="PreviousButton">
                        <property name="text">
                         <string>Previous</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="KClusterButton">
+                       <property name="text">
+                        <string>Lihat Clustering Harga Rumah</string>
                        </property>
                       </widget>
                      </item>
@@ -2129,9 +2136,9 @@ QPushButton{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="MatplotlibSketch">
+                      <widget class="QPushButton" name="MatplotlibSketch">
                        <property name="text">
-                        <string>Tren Grafik Rumah</string>
+                        <string>Lihat Tren Grafik Rumah Ini!</string>
                        </property>
                       </widget>
                      </item>

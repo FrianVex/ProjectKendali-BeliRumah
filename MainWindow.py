@@ -3,6 +3,7 @@ from FrontUIVer110 import Ui_MainWindow
 from Account import Account
 from PerhitunganKredit import HitungKredit
 from Houses import Housing
+from AkuAdalahAlgoritma import ElbowCanvas
 import AppIcons_rc
 
 # Needed Libraries
@@ -12,7 +13,33 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import *  # type: ignore
 from PySide2.QtGui import *  # type: ignore
 from PySide2.QtWidgets import *  # type: ignore
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
+# Custom Matplotlib Widget
+class MatplotlibWidget(FigureCanvas):
+    def __init__(self, parent=None):
+        fig = Figure()
+        self.axes = fig.add_subplot(111)
+        super(MatplotlibWidget, self).__init__(fig)
+        self.setParent(parent)
+
+# Popup Window for Matplotlib
+class MatplotlibPopup(QDialog):
+    def __init__(self, parent=None):
+        super(MatplotlibPopup, self).__init__(parent)
+        self.setWindowTitle("Matplotlib Sketch")
+        self.setGeometry(100, 100, 800, 600)
+        
+        layout = QVBoxLayout(self)
+        self.matplotlib_widget = MatplotlibWidget(self)
+        layout.addWidget(self.matplotlib_widget)
+        
+        self.setLayout(layout)
+        
+    def plot_graph(self, graph):
+        graph.PlottingGraph(self.matplotlib_widget.axes)
+        self.matplotlib_widget.draw()
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -24,6 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.accounts = Account()
         self.kredit = HitungKredit()
         self.yeah_houses = Housing()
+        self.graph = ElbowCanvas()
 
         # Stored Flags
         self.is_login = False
@@ -78,6 +106,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Price_2.clicked.connect(self.price_2_clicked)
         self.Price_3.clicked.connect(self.price_3_clicked)
         self.Price_4.clicked.connect(self.price_4_clicked)
+
+        # Graphing
+        self.MatplotlibSketch.clicked.connect(self.show_matplotlib_popup)
 
         # Set up the First Condition to Boot up the Program
         self.ContentFrame.setCurrentIndex(0)
@@ -433,19 +464,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 building_size = exported_data[5]
                 certificate = exported_data[6]
                 electricity = exported_data[7]
-                property_condition = exported_data[8]
-                floors = exported_data[9]
-                garages = exported_data[10]
-                bedrooms = exported_data[11]
-                bathrooms = exported_data[12]
-                facilities = exported_data[13]
+                # property_condition = exported_data[8]
+                floors = exported_data[8]
+                garages = exported_data[9]
+                bedrooms = exported_data[10]
+                bathrooms = exported_data[11]
+                facilities = exported_data[12]
 
                 # Do something with the elements
 
             self.JudulRumah.setText(f"{title}\n\n{price}")
             self.FotoRumahLabel.load(QUrl(img_source))
             self.AlamatRumah.setText(address)
-            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nLantai: {floors}")
             self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
 
         elif self.Price_Button == 2:
@@ -461,19 +492,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 building_size = exported_data[5]
                 certificate = exported_data[6]
                 electricity = exported_data[7]
-                property_condition = exported_data[8]
-                floors = exported_data[9]
-                garages = exported_data[10]
-                bedrooms = exported_data[11]
-                bathrooms = exported_data[12]
-                facilities = exported_data[13]
+                # property_condition = exported_data[8]
+                floors = exported_data[8]
+                garages = exported_data[9]
+                bedrooms = exported_data[10]
+                bathrooms = exported_data[11]
+                facilities = exported_data[12]
 
                 # Do something with the elements
 
             self.JudulRumah.setText(f"{title}\n\n{price}")
             self.FotoRumahLabel.load(QUrl(img_source))
             self.AlamatRumah.setText(address)
-            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nLantai: {floors}")
             self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
 
         elif self.Price_Button == 3:
@@ -489,19 +520,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 building_size = exported_data[5]
                 certificate = exported_data[6]
                 electricity = exported_data[7]
-                property_condition = exported_data[8]
-                floors = exported_data[9]
-                garages = exported_data[10]
-                bedrooms = exported_data[11]
-                bathrooms = exported_data[12]
-                facilities = exported_data[13]
+                # property_condition = exported_data[8]
+                floors = exported_data[8]
+                garages = exported_data[9]
+                bedrooms = exported_data[10]
+                bathrooms = exported_data[11]
+                facilities = exported_data[12]
 
                 # Do something with the elements
 
             self.JudulRumah.setText(f"{title}\n\n{price}")
             self.FotoRumahLabel.load(QUrl(img_source))
             self.AlamatRumah.setText(address)
-            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nLantai: {floors}")
             self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
 
         elif self.Price_Button == 4:
@@ -560,6 +591,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.Desc_4.setText(self.house_data_entry_4[1])
                 self.Desc_4.setWordWrap(True)
                 self.Price_4.setText(f"{self.house_data_entry_4[2]}\n\nLihat ini!")
+
+    def refresh_houses(self):
+        self.read_random_houses()
+
+# Algorithms Functions______________________________________________________________________________________________________________________
+
+    # Setelah install sklearn dan seaborn, satu environment rusak installasi PySide2 nya. Too Bad - Raffly
+    # Plotting Graphs
+    def show_matplotlib_popup(self):
+        self.popup = MatplotlibPopup(self)
+        self.popup.plot_graph(self.graph)
+        self.popup.exec_()
+
+    # KMeans Clustering
+    def kmeans_clustering(self):
+        self.graph.KCluster()
+
 
 if __name__ == "__main__":
     import sys
