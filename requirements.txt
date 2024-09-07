@@ -1,0 +1,3 @@
+required libraries
+
+time, json, firebase_admin, numpy, matplotlib
