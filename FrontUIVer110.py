@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'FrontUIVer1qxPQkQ.ui'
+## Form generated from reading UI file 'FrontUIVer1vGWBJc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.8
 ##
@@ -32,13 +32,6 @@ class Ui_MainWindow(object):
 "	margin: 0;\n"
 "	color: #000;\n"
 "}\n"
-"\n"
-"#ContentWindow #ProgramPanelContainer #UserControlPanelContainer{\n"
-"	background-color:#1619d;\n"
-"}\n"
-"#MoreMenuContainer{\n"
-"	background-color:#1f232a;\n"
-"}\n"
 "QPushButton{\n"
 "	text-align: left;\n"
 "	padding: 3px 5px;\n"
@@ -67,11 +60,11 @@ class Ui_MainWindow(object):
         self.Logo.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.Logo)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.label = QLabel(self.Logo)
-        self.label.setObjectName(u"label")
-        self.label.setPixmap(QPixmap(u":/FeatherIcons/feather/home.svg"))
+        self.LogoLabel = QLabel(self.Logo)
+        self.LogoLabel.setObjectName(u"LogoLabel")
+        self.LogoLabel.setPixmap(QPixmap(u":/FeatherIcons/feather/home.svg"))
 
-        self.horizontalLayout_5.addWidget(self.label)
+        self.horizontalLayout_5.addWidget(self.LogoLabel)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -333,7 +326,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.ScrollAreaContentSubContainer = QWidget()
         self.ScrollAreaContentSubContainer.setObjectName(u"ScrollAreaContentSubContainer")
-        self.ScrollAreaContentSubContainer.setGeometry(QRect(0, 0, 723, 750))
+        self.ScrollAreaContentSubContainer.setGeometry(QRect(0, 0, 700, 758))
         self.gridLayout_9 = QGridLayout(self.ScrollAreaContentSubContainer)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.Content4 = QFrame(self.ScrollAreaContentSubContainer)
@@ -342,8 +335,9 @@ class Ui_MainWindow(object):
         self.Content4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_18 = QHBoxLayout(self.Content4)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.Img_4 = QLabel(self.Content4)
+        self.Img_4 = QWebEngineView(self.Content4)
         self.Img_4.setObjectName(u"Img_4")
+        self.Img_4.setUrl(QUrl(u"about:blank"))
 
         self.horizontalLayout_18.addWidget(self.Img_4)
 
@@ -352,7 +346,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_18.addWidget(self.Desc_4)
 
-        self.Price_4 = QLabel(self.Content4)
+        self.Price_4 = QPushButton(self.Content4)
         self.Price_4.setObjectName(u"Price_4")
 
         self.horizontalLayout_18.addWidget(self.Price_4)
@@ -366,8 +360,9 @@ class Ui_MainWindow(object):
         self.Content3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_19 = QHBoxLayout(self.Content3)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.Img_3 = QLabel(self.Content3)
+        self.Img_3 = QWebEngineView(self.Content3)
         self.Img_3.setObjectName(u"Img_3")
+        self.Img_3.setUrl(QUrl(u"about:blank"))
 
         self.horizontalLayout_19.addWidget(self.Img_3)
 
@@ -376,7 +371,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_19.addWidget(self.Desc_3)
 
-        self.Price_3 = QLabel(self.Content3)
+        self.Price_3 = QPushButton(self.Content3)
         self.Price_3.setObjectName(u"Price_3")
 
         self.horizontalLayout_19.addWidget(self.Price_3)
@@ -390,8 +385,9 @@ class Ui_MainWindow(object):
         self.Content2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_20 = QHBoxLayout(self.Content2)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.Img_2 = QLabel(self.Content2)
+        self.Img_2 = QWebEngineView(self.Content2)
         self.Img_2.setObjectName(u"Img_2")
+        self.Img_2.setUrl(QUrl(u"about:blank"))
 
         self.horizontalLayout_20.addWidget(self.Img_2)
 
@@ -400,7 +396,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_20.addWidget(self.Desc_2)
 
-        self.Price_2 = QLabel(self.Content2)
+        self.Price_2 = QPushButton(self.Content2)
         self.Price_2.setObjectName(u"Price_2")
 
         self.horizontalLayout_20.addWidget(self.Price_2)
@@ -414,8 +410,9 @@ class Ui_MainWindow(object):
         self.Content1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_21 = QHBoxLayout(self.Content1)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.Img_1 = QLabel(self.Content1)
+        self.Img_1 = QWebEngineView(self.Content1)
         self.Img_1.setObjectName(u"Img_1")
+        self.Img_1.setUrl(QUrl(u"about:blank"))
 
         self.horizontalLayout_21.addWidget(self.Img_1)
 
@@ -424,13 +421,30 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_21.addWidget(self.Desc_1)
 
-        self.Price_1 = QLabel(self.Content1)
+        self.Price_1 = QPushButton(self.Content1)
         self.Price_1.setObjectName(u"Price_1")
 
         self.horizontalLayout_21.addWidget(self.Price_1)
 
 
         self.gridLayout_9.addWidget(self.Content1, 3, 0, 1, 1)
+
+        self.HomeNavigateContainer = QWidget(self.ScrollAreaContentSubContainer)
+        self.HomeNavigateContainer.setObjectName(u"HomeNavigateContainer")
+        self.horizontalLayout_17 = QHBoxLayout(self.HomeNavigateContainer)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.PreviousButton = QPushButton(self.HomeNavigateContainer)
+        self.PreviousButton.setObjectName(u"PreviousButton")
+
+        self.horizontalLayout_17.addWidget(self.PreviousButton, 0, Qt.AlignLeft)
+
+        self.NextButton = QPushButton(self.HomeNavigateContainer)
+        self.NextButton.setObjectName(u"NextButton")
+
+        self.horizontalLayout_17.addWidget(self.NextButton, 0, Qt.AlignRight)
+
+
+        self.gridLayout_9.addWidget(self.HomeNavigateContainer, 4, 0, 1, 1, Qt.AlignBottom)
 
         self.scrollArea.setWidget(self.ScrollAreaContentSubContainer)
 
@@ -442,6 +456,74 @@ class Ui_MainWindow(object):
         self.gridLayout_8 = QGridLayout(self.LoginPage)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.gridLayout_8.setContentsMargins(9, 0, 9, 0)
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.gridLayout_8.addItem(self.horizontalSpacer_5, 3, 0, 1, 1)
+
+        self.LoginTextContainer = QWidget(self.LoginPage)
+        self.LoginTextContainer.setObjectName(u"LoginTextContainer")
+        self.verticalLayout_6 = QVBoxLayout(self.LoginTextContainer)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.LoginText = QLabel(self.LoginTextContainer)
+        self.LoginText.setObjectName(u"LoginText")
+
+        self.verticalLayout_6.addWidget(self.LoginText, 0, Qt.AlignLeft|Qt.AlignTop)
+
+
+        self.gridLayout_8.addWidget(self.LoginTextContainer, 0, 1, 1, 1)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_8.addItem(self.horizontalSpacer_6, 3, 3, 1, 1)
+
+        self.LoginButtonContainer = QWidget(self.LoginPage)
+        self.LoginButtonContainer.setObjectName(u"LoginButtonContainer")
+        self.gridLayout_12 = QGridLayout(self.LoginButtonContainer)
+        self.gridLayout_12.setObjectName(u"gridLayout_12")
+        self.LoginLabelStatus = QLabel(self.LoginButtonContainer)
+        self.LoginLabelStatus.setObjectName(u"LoginLabelStatus")
+
+        self.gridLayout_12.addWidget(self.LoginLabelStatus, 0, 0, 1, 1)
+
+        self.LoginButton = QPushButton(self.LoginButtonContainer)
+        self.LoginButton.setObjectName(u"LoginButton")
+
+        self.gridLayout_12.addWidget(self.LoginButton, 2, 0, 1, 1)
+
+        self.GoResetPasswordButton = QPushButton(self.LoginButtonContainer)
+        self.GoResetPasswordButton.setObjectName(u"GoResetPasswordButton")
+
+        self.gridLayout_12.addWidget(self.GoResetPasswordButton, 2, 1, 1, 1)
+
+
+        self.gridLayout_8.addWidget(self.LoginButtonContainer, 4, 1, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_8.addItem(self.verticalSpacer_2, 6, 1, 1, 1)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 60, QSizePolicy.Minimum, QSizePolicy.Preferred)
+
+        self.gridLayout_8.addItem(self.verticalSpacer_3, 1, 1, 1, 1)
+
+        self.PasswordContainer = QWidget(self.LoginPage)
+        self.PasswordContainer.setObjectName(u"PasswordContainer")
+        self.verticalLayout_8 = QVBoxLayout(self.PasswordContainer)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.PasswordLabel = QLabel(self.PasswordContainer)
+        self.PasswordLabel.setObjectName(u"PasswordLabel")
+
+        self.verticalLayout_8.addWidget(self.PasswordLabel, 0, Qt.AlignTop)
+
+        self.PasswordBox = QTextEdit(self.PasswordContainer)
+        self.PasswordBox.setObjectName(u"PasswordBox")
+        self.PasswordBox.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_8.addWidget(self.PasswordBox)
+
+
+        self.gridLayout_8.addWidget(self.PasswordContainer, 3, 1, 1, 1, Qt.AlignTop)
+
         self.UsernameContainer = QWidget(self.LoginPage)
         self.UsernameContainer.setObjectName(u"UsernameContainer")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -467,68 +549,33 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addWidget(self.UsernameContainer, 2, 1, 1, 1)
 
-        self.LoginButtonContainer = QWidget(self.LoginPage)
-        self.LoginButtonContainer.setObjectName(u"LoginButtonContainer")
-        self.verticalLayout_7 = QVBoxLayout(self.LoginButtonContainer)
+        self.ResetPasswordContainer = QWidget(self.LoginPage)
+        self.ResetPasswordContainer.setObjectName(u"ResetPasswordContainer")
+        self.verticalLayout_7 = QVBoxLayout(self.ResetPasswordContainer)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.LoginLabelStatus = QLabel(self.LoginButtonContainer)
-        self.LoginLabelStatus.setObjectName(u"LoginLabelStatus")
+        self.ResetEmailLabel = QLabel(self.ResetPasswordContainer)
+        self.ResetEmailLabel.setObjectName(u"ResetEmailLabel")
 
-        self.verticalLayout_7.addWidget(self.LoginLabelStatus)
+        self.verticalLayout_7.addWidget(self.ResetEmailLabel)
 
-        self.LoginButton = QPushButton(self.LoginButtonContainer)
-        self.LoginButton.setObjectName(u"LoginButton")
+        self.EmailBox = QTextEdit(self.ResetPasswordContainer)
+        self.EmailBox.setObjectName(u"EmailBox")
+        self.EmailBox.setMaximumSize(QSize(300, 25))
 
-        self.verticalLayout_7.addWidget(self.LoginButton, 0, Qt.AlignLeft)
+        self.verticalLayout_7.addWidget(self.EmailBox)
 
+        self.ResetFlagStatus = QLabel(self.ResetPasswordContainer)
+        self.ResetFlagStatus.setObjectName(u"ResetFlagStatus")
 
-        self.gridLayout_8.addWidget(self.LoginButtonContainer, 4, 1, 1, 1)
+        self.verticalLayout_7.addWidget(self.ResetFlagStatus)
 
-        self.PasswordContainer = QWidget(self.LoginPage)
-        self.PasswordContainer.setObjectName(u"PasswordContainer")
-        self.verticalLayout_8 = QVBoxLayout(self.PasswordContainer)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.PasswordLabel = QLabel(self.PasswordContainer)
-        self.PasswordLabel.setObjectName(u"PasswordLabel")
+        self.ProcessResetPassword = QPushButton(self.ResetPasswordContainer)
+        self.ProcessResetPassword.setObjectName(u"ProcessResetPassword")
 
-        self.verticalLayout_8.addWidget(self.PasswordLabel, 0, Qt.AlignTop)
-
-        self.PasswordBox = QTextEdit(self.PasswordContainer)
-        self.PasswordBox.setObjectName(u"PasswordBox")
-        self.PasswordBox.setMaximumSize(QSize(300, 25))
-
-        self.verticalLayout_8.addWidget(self.PasswordBox)
+        self.verticalLayout_7.addWidget(self.ProcessResetPassword)
 
 
-        self.gridLayout_8.addWidget(self.PasswordContainer, 3, 1, 1, 1, Qt.AlignTop)
-
-        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.gridLayout_8.addItem(self.horizontalSpacer_5, 3, 0, 1, 1)
-
-        self.LoginTextContainer = QWidget(self.LoginPage)
-        self.LoginTextContainer.setObjectName(u"LoginTextContainer")
-        self.verticalLayout_6 = QVBoxLayout(self.LoginTextContainer)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.LoginText = QLabel(self.LoginTextContainer)
-        self.LoginText.setObjectName(u"LoginText")
-
-        self.verticalLayout_6.addWidget(self.LoginText, 0, Qt.AlignLeft|Qt.AlignTop)
-
-
-        self.gridLayout_8.addWidget(self.LoginTextContainer, 0, 1, 1, 1)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_8.addItem(self.verticalSpacer_2, 5, 1, 1, 1)
-
-        self.verticalSpacer_3 = QSpacerItem(20, 60, QSizePolicy.Minimum, QSizePolicy.Preferred)
-
-        self.gridLayout_8.addItem(self.verticalSpacer_3, 1, 1, 1, 1)
-
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_8.addItem(self.horizontalSpacer_6, 3, 2, 1, 1)
+        self.gridLayout_8.addWidget(self.ResetPasswordContainer, 5, 1, 1, 1, Qt.AlignTop)
 
         self.ContentFrame.addWidget(self.LoginPage)
         self.CreatePage = QWidget()
@@ -693,6 +740,24 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_15.addWidget(self.PekerjaanContainer, 0, Qt.AlignTop)
 
+        self.AlamatEmailContainer = QWidget(self.KolomData)
+        self.AlamatEmailContainer.setObjectName(u"AlamatEmailContainer")
+        self.verticalLayout_2 = QVBoxLayout(self.AlamatEmailContainer)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.AlamatEmailLabel = QLabel(self.AlamatEmailContainer)
+        self.AlamatEmailLabel.setObjectName(u"AlamatEmailLabel")
+
+        self.verticalLayout_2.addWidget(self.AlamatEmailLabel)
+
+        self.AlamatEmailBox = QTextEdit(self.AlamatEmailContainer)
+        self.AlamatEmailBox.setObjectName(u"AlamatEmailBox")
+        self.AlamatEmailBox.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_2.addWidget(self.AlamatEmailBox)
+
+
+        self.verticalLayout_15.addWidget(self.AlamatEmailContainer)
+
         self.GajiContainer = QWidget(self.KolomData)
         self.GajiContainer.setObjectName(u"GajiContainer")
         self.verticalLayout_19 = QVBoxLayout(self.GajiContainer)
@@ -813,111 +878,11 @@ class Ui_MainWindow(object):
         self.ContentFrame.addWidget(self.CreatePage)
         self.PerhitunganKPRPage = QWidget()
         self.PerhitunganKPRPage.setObjectName(u"PerhitunganKPRPage")
-        self.horizontalLayout_25 = QHBoxLayout(self.PerhitunganKPRPage)
-        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.InputPerhitunganPageContainer = QWidget(self.PerhitunganKPRPage)
-        self.InputPerhitunganPageContainer.setObjectName(u"InputPerhitunganPageContainer")
-        self.verticalLayout_44 = QVBoxLayout(self.InputPerhitunganPageContainer)
-        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
-        self.PerhitunganKPRContainer = QWidget(self.InputPerhitunganPageContainer)
-        self.PerhitunganKPRContainer.setObjectName(u"PerhitunganKPRContainer")
-        self.verticalLayout_45 = QVBoxLayout(self.PerhitunganKPRContainer)
-        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
-        self.PerhitunganKPRLabel = QLabel(self.PerhitunganKPRContainer)
-        self.PerhitunganKPRLabel.setObjectName(u"PerhitunganKPRLabel")
+        self.gridLayout_13 = QGridLayout(self.PerhitunganKPRPage)
+        self.gridLayout_13.setObjectName(u"gridLayout_13")
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_45.addWidget(self.PerhitunganKPRLabel)
-
-
-        self.verticalLayout_44.addWidget(self.PerhitunganKPRContainer)
-
-        self.PerhitunganKPRHargaContainer = QWidget(self.InputPerhitunganPageContainer)
-        self.PerhitunganKPRHargaContainer.setObjectName(u"PerhitunganKPRHargaContainer")
-        self.verticalLayout_46 = QVBoxLayout(self.PerhitunganKPRHargaContainer)
-        self.verticalLayout_46.setObjectName(u"verticalLayout_46")
-        self.PerhitunganKPRHargaPropertiLabel = QLabel(self.PerhitunganKPRHargaContainer)
-        self.PerhitunganKPRHargaPropertiLabel.setObjectName(u"PerhitunganKPRHargaPropertiLabel")
-
-        self.verticalLayout_46.addWidget(self.PerhitunganKPRHargaPropertiLabel)
-
-        self.PerhitunganKPRUangMukaTextEdit = QTextEdit(self.PerhitunganKPRHargaContainer)
-        self.PerhitunganKPRUangMukaTextEdit.setObjectName(u"PerhitunganKPRUangMukaTextEdit")
-        self.PerhitunganKPRUangMukaTextEdit.setMaximumSize(QSize(300, 20))
-
-        self.verticalLayout_46.addWidget(self.PerhitunganKPRUangMukaTextEdit)
-
-        self.PerhitunganKPRUangMukaLabel = QLabel(self.PerhitunganKPRHargaContainer)
-        self.PerhitunganKPRUangMukaLabel.setObjectName(u"PerhitunganKPRUangMukaLabel")
-
-        self.verticalLayout_46.addWidget(self.PerhitunganKPRUangMukaLabel)
-
-        self.PerhitunganKPRHargaPropertiTextEdit = QTextEdit(self.PerhitunganKPRHargaContainer)
-        self.PerhitunganKPRHargaPropertiTextEdit.setObjectName(u"PerhitunganKPRHargaPropertiTextEdit")
-        self.PerhitunganKPRHargaPropertiTextEdit.setMaximumSize(QSize(300, 20))
-
-        self.verticalLayout_46.addWidget(self.PerhitunganKPRHargaPropertiTextEdit)
-
-
-        self.verticalLayout_44.addWidget(self.PerhitunganKPRHargaContainer, 0, Qt.AlignTop)
-
-        self.PerhitunganKPRSukuBungaContainer = QWidget(self.InputPerhitunganPageContainer)
-        self.PerhitunganKPRSukuBungaContainer.setObjectName(u"PerhitunganKPRSukuBungaContainer")
-        self.verticalLayout_47 = QVBoxLayout(self.PerhitunganKPRSukuBungaContainer)
-        self.verticalLayout_47.setObjectName(u"verticalLayout_47")
-        self.PerhitunganKPRPersentaseSukuBungaLabel = QLabel(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRPersentaseSukuBungaLabel.setObjectName(u"PerhitunganKPRPersentaseSukuBungaLabel")
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRPersentaseSukuBungaLabel)
-
-        self.PerhitunganKPRMasaKreditLabelTextEdit = QTextEdit(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRMasaKreditLabelTextEdit.setObjectName(u"PerhitunganKPRMasaKreditLabelTextEdit")
-        self.PerhitunganKPRMasaKreditLabelTextEdit.setMaximumSize(QSize(300, 20))
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRMasaKreditLabelTextEdit)
-
-        self.PerhitunganKPRMasaKreditLabel = QLabel(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRMasaKreditLabel.setObjectName(u"PerhitunganKPRMasaKreditLabel")
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRMasaKreditLabel)
-
-        self.PerhitunganKPRJangkaWaktuKreditTextEdit = QTextEdit(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRJangkaWaktuKreditTextEdit.setObjectName(u"PerhitunganKPRJangkaWaktuKreditTextEdit")
-        self.PerhitunganKPRJangkaWaktuKreditTextEdit.setMaximumSize(QSize(300, 20))
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRJangkaWaktuKreditTextEdit)
-
-        self.PerhitunganKPRJangkaWaktuKreditLabel = QLabel(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRJangkaWaktuKreditLabel.setObjectName(u"PerhitunganKPRJangkaWaktuKreditLabel")
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRJangkaWaktuKreditLabel)
-
-        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit = QTextEdit(self.PerhitunganKPRSukuBungaContainer)
-        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit.setObjectName(u"PerhitunganKPRPersentaseSukuBungaLabelTextEdit")
-        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit.setMaximumSize(QSize(300, 20))
-
-        self.verticalLayout_47.addWidget(self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit)
-
-
-        self.verticalLayout_44.addWidget(self.PerhitunganKPRSukuBungaContainer, 0, Qt.AlignTop)
-
-        self.PerhitunganKPRCalculateButtonContainer = QWidget(self.InputPerhitunganPageContainer)
-        self.PerhitunganKPRCalculateButtonContainer.setObjectName(u"PerhitunganKPRCalculateButtonContainer")
-        self.verticalLayout_48 = QVBoxLayout(self.PerhitunganKPRCalculateButtonContainer)
-        self.verticalLayout_48.setObjectName(u"verticalLayout_48")
-        self.PerhitunganKPRCalculateButton = QPushButton(self.PerhitunganKPRCalculateButtonContainer)
-        self.PerhitunganKPRCalculateButton.setObjectName(u"PerhitunganKPRCalculateButton")
-
-        self.verticalLayout_48.addWidget(self.PerhitunganKPRCalculateButton)
-
-
-        self.verticalLayout_44.addWidget(self.PerhitunganKPRCalculateButtonContainer, 0, Qt.AlignTop)
-
-        self.verticalSpacer_9 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_44.addItem(self.verticalSpacer_9)
-
-
-        self.horizontalLayout_25.addWidget(self.InputPerhitunganPageContainer)
+        self.gridLayout_13.addItem(self.horizontalSpacer_9, 0, 3, 1, 1)
 
         self.OutputPerhitunganPageContainer = QWidget(self.PerhitunganKPRPage)
         self.OutputPerhitunganPageContainer.setObjectName(u"OutputPerhitunganPageContainer")
@@ -1064,7 +1029,178 @@ class Ui_MainWindow(object):
         self.verticalLayout_49.addItem(self.verticalSpacer_10)
 
 
-        self.horizontalLayout_25.addWidget(self.OutputPerhitunganPageContainer)
+        self.gridLayout_13.addWidget(self.OutputPerhitunganPageContainer, 0, 2, 1, 1)
+
+        self.InputPerhitunganPageContainer = QWidget(self.PerhitunganKPRPage)
+        self.InputPerhitunganPageContainer.setObjectName(u"InputPerhitunganPageContainer")
+        self.verticalLayout_44 = QVBoxLayout(self.InputPerhitunganPageContainer)
+        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
+        self.PerhitunganKPRContainer = QWidget(self.InputPerhitunganPageContainer)
+        self.PerhitunganKPRContainer.setObjectName(u"PerhitunganKPRContainer")
+        self.verticalLayout_45 = QVBoxLayout(self.PerhitunganKPRContainer)
+        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
+        self.PerhitunganKPRLabel = QLabel(self.PerhitunganKPRContainer)
+        self.PerhitunganKPRLabel.setObjectName(u"PerhitunganKPRLabel")
+
+        self.verticalLayout_45.addWidget(self.PerhitunganKPRLabel)
+
+
+        self.verticalLayout_44.addWidget(self.PerhitunganKPRContainer)
+
+        self.PerhitunganKPRHargaContainer = QWidget(self.InputPerhitunganPageContainer)
+        self.PerhitunganKPRHargaContainer.setObjectName(u"PerhitunganKPRHargaContainer")
+        self.verticalLayout_46 = QVBoxLayout(self.PerhitunganKPRHargaContainer)
+        self.verticalLayout_46.setObjectName(u"verticalLayout_46")
+        self.PerhitunganKPRHargaPropertiLabel = QLabel(self.PerhitunganKPRHargaContainer)
+        self.PerhitunganKPRHargaPropertiLabel.setObjectName(u"PerhitunganKPRHargaPropertiLabel")
+
+        self.verticalLayout_46.addWidget(self.PerhitunganKPRHargaPropertiLabel)
+
+        self.PerhitunganKPRUangMukaTextEdit = QTextEdit(self.PerhitunganKPRHargaContainer)
+        self.PerhitunganKPRUangMukaTextEdit.setObjectName(u"PerhitunganKPRUangMukaTextEdit")
+        self.PerhitunganKPRUangMukaTextEdit.setMaximumSize(QSize(300, 20))
+
+        self.verticalLayout_46.addWidget(self.PerhitunganKPRUangMukaTextEdit)
+
+        self.PerhitunganKPRUangMukaLabel = QLabel(self.PerhitunganKPRHargaContainer)
+        self.PerhitunganKPRUangMukaLabel.setObjectName(u"PerhitunganKPRUangMukaLabel")
+
+        self.verticalLayout_46.addWidget(self.PerhitunganKPRUangMukaLabel)
+
+        self.PerhitunganKPRHargaPropertiTextEdit = QTextEdit(self.PerhitunganKPRHargaContainer)
+        self.PerhitunganKPRHargaPropertiTextEdit.setObjectName(u"PerhitunganKPRHargaPropertiTextEdit")
+        self.PerhitunganKPRHargaPropertiTextEdit.setMaximumSize(QSize(300, 20))
+
+        self.verticalLayout_46.addWidget(self.PerhitunganKPRHargaPropertiTextEdit)
+
+        self.BungaTetapcheckBox = QCheckBox(self.PerhitunganKPRHargaContainer)
+        self.BungaTetapcheckBox.setObjectName(u"BungaTetapcheckBox")
+
+        self.verticalLayout_46.addWidget(self.BungaTetapcheckBox)
+
+        self.BungaBerjenjangcheckBox = QCheckBox(self.PerhitunganKPRHargaContainer)
+        self.BungaBerjenjangcheckBox.setObjectName(u"BungaBerjenjangcheckBox")
+
+        self.verticalLayout_46.addWidget(self.BungaBerjenjangcheckBox)
+
+
+        self.verticalLayout_44.addWidget(self.PerhitunganKPRHargaContainer, 0, Qt.AlignTop)
+
+        self.TipeTipeBunga = QStackedWidget(self.InputPerhitunganPageContainer)
+        self.TipeTipeBunga.setObjectName(u"TipeTipeBunga")
+        self.page_3 = QWidget()
+        self.page_3.setObjectName(u"page_3")
+        self.verticalLayout_30 = QVBoxLayout(self.page_3)
+        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
+        self.PerhitunganKPRPersentaseSukuBungaLabel = QLabel(self.page_3)
+        self.PerhitunganKPRPersentaseSukuBungaLabel.setObjectName(u"PerhitunganKPRPersentaseSukuBungaLabel")
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRPersentaseSukuBungaLabel)
+
+        self.PerhitunganKPRMasaKreditLabelTextEdit = QTextEdit(self.page_3)
+        self.PerhitunganKPRMasaKreditLabelTextEdit.setObjectName(u"PerhitunganKPRMasaKreditLabelTextEdit")
+        self.PerhitunganKPRMasaKreditLabelTextEdit.setMaximumSize(QSize(300, 20))
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRMasaKreditLabelTextEdit)
+
+        self.PerhitunganKPRMasaKreditLabel = QLabel(self.page_3)
+        self.PerhitunganKPRMasaKreditLabel.setObjectName(u"PerhitunganKPRMasaKreditLabel")
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRMasaKreditLabel)
+
+        self.PerhitunganKPRJangkaWaktuKreditTextEdit = QTextEdit(self.page_3)
+        self.PerhitunganKPRJangkaWaktuKreditTextEdit.setObjectName(u"PerhitunganKPRJangkaWaktuKreditTextEdit")
+        self.PerhitunganKPRJangkaWaktuKreditTextEdit.setMaximumSize(QSize(300, 20))
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRJangkaWaktuKreditTextEdit)
+
+        self.PerhitunganKPRJangkaWaktuKreditLabel = QLabel(self.page_3)
+        self.PerhitunganKPRJangkaWaktuKreditLabel.setObjectName(u"PerhitunganKPRJangkaWaktuKreditLabel")
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRJangkaWaktuKreditLabel)
+
+        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit = QTextEdit(self.page_3)
+        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit.setObjectName(u"PerhitunganKPRPersentaseSukuBungaLabelTextEdit")
+        self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit.setMaximumSize(QSize(300, 20))
+
+        self.verticalLayout_30.addWidget(self.PerhitunganKPRPersentaseSukuBungaLabelTextEdit)
+
+        self.TipeTipeBunga.addWidget(self.page_3)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.verticalLayout_39 = QVBoxLayout(self.page_4)
+        self.verticalLayout_39.setObjectName(u"verticalLayout_39")
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangLabel = QLabel(self.page_4)
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangLabel.setObjectName(u"PerhitunganKPRPersentaseLamaKreditBerjenjangLabel")
+
+        self.verticalLayout_39.addWidget(self.PerhitunganKPRPersentaseLamaKreditBerjenjangLabel)
+
+        self.spinBox = QSpinBox(self.page_4)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setMaximumSize(QSize(300, 16777215))
+        self.spinBox.setMinimum(1)
+
+        self.verticalLayout_39.addWidget(self.spinBox)
+
+        self.PerhitunganKPRBungaPerTahunKreditBerjenjangLabel = QLabel(self.page_4)
+        self.PerhitunganKPRBungaPerTahunKreditBerjenjangLabel.setObjectName(u"PerhitunganKPRBungaPerTahunKreditBerjenjangLabel")
+
+        self.verticalLayout_39.addWidget(self.PerhitunganKPRBungaPerTahunKreditBerjenjangLabel)
+
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangBox = QTextEdit(self.page_4)
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangBox.setObjectName(u"PerhitunganKPRPersentaseLamaKreditBerjenjangBox")
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangBox.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_39.addWidget(self.PerhitunganKPRPersentaseLamaKreditBerjenjangBox)
+
+        self.BungaEskalasiLabel = QLabel(self.page_4)
+        self.BungaEskalasiLabel.setObjectName(u"BungaEskalasiLabel")
+
+        self.verticalLayout_39.addWidget(self.BungaEskalasiLabel)
+
+        self.EskalasiBungaBox = QTextEdit(self.page_4)
+        self.EskalasiBungaBox.setObjectName(u"EskalasiBungaBox")
+        self.EskalasiBungaBox.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_39.addWidget(self.EskalasiBungaBox)
+
+        self.PerhitunganKPRJangkaWaktuKreditBerjenjangLabel = QLabel(self.page_4)
+        self.PerhitunganKPRJangkaWaktuKreditBerjenjangLabel.setObjectName(u"PerhitunganKPRJangkaWaktuKreditBerjenjangLabel")
+
+        self.verticalLayout_39.addWidget(self.PerhitunganKPRJangkaWaktuKreditBerjenjangLabel)
+
+        self.PerhitunganKPRJangkaWaktuMasaKreditBerjenjang = QTextEdit(self.page_4)
+        self.PerhitunganKPRJangkaWaktuMasaKreditBerjenjang.setObjectName(u"PerhitunganKPRJangkaWaktuMasaKreditBerjenjang")
+        self.PerhitunganKPRJangkaWaktuMasaKreditBerjenjang.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_39.addWidget(self.PerhitunganKPRJangkaWaktuMasaKreditBerjenjang)
+
+        self.TipeTipeBunga.addWidget(self.page_4)
+
+        self.verticalLayout_44.addWidget(self.TipeTipeBunga, 0, Qt.AlignTop)
+
+        self.PerhitunganKPRCalculateButtonContainer = QWidget(self.InputPerhitunganPageContainer)
+        self.PerhitunganKPRCalculateButtonContainer.setObjectName(u"PerhitunganKPRCalculateButtonContainer")
+        self.verticalLayout_48 = QVBoxLayout(self.PerhitunganKPRCalculateButtonContainer)
+        self.verticalLayout_48.setObjectName(u"verticalLayout_48")
+        self.PerhitunganKPRCalculateButton = QPushButton(self.PerhitunganKPRCalculateButtonContainer)
+        self.PerhitunganKPRCalculateButton.setObjectName(u"PerhitunganKPRCalculateButton")
+
+        self.verticalLayout_48.addWidget(self.PerhitunganKPRCalculateButton)
+
+
+        self.verticalLayout_44.addWidget(self.PerhitunganKPRCalculateButtonContainer, 0, Qt.AlignTop)
+
+        self.verticalSpacer_9 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_44.addItem(self.verticalSpacer_9)
+
+
+        self.gridLayout_13.addWidget(self.InputPerhitunganPageContainer, 0, 0, 1, 1)
+
+        self.horizontalSpacer_10 = QSpacerItem(20, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.gridLayout_13.addItem(self.horizontalSpacer_10, 0, 1, 1, 1)
 
         self.ContentFrame.addWidget(self.PerhitunganKPRPage)
         self.DetailPembayaranPage = QWidget()
@@ -1235,9 +1371,31 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 723, 750))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 700, 758))
         self.gridLayout_10 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
+        self.widget_9 = QWidget(self.scrollAreaWidgetContents)
+        self.widget_9.setObjectName(u"widget_9")
+        self.horizontalLayout_28 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.AlamatRumah = QLabel(self.widget_9)
+        self.AlamatRumah.setObjectName(u"AlamatRumah")
+
+        self.horizontalLayout_28.addWidget(self.AlamatRumah)
+
+        self.KontakPengurus = QLabel(self.widget_9)
+        self.KontakPengurus.setObjectName(u"KontakPengurus")
+
+        self.horizontalLayout_28.addWidget(self.KontakPengurus)
+
+        self.MatplotlibSketch = QLabel(self.widget_9)
+        self.MatplotlibSketch.setObjectName(u"MatplotlibSketch")
+
+        self.horizontalLayout_28.addWidget(self.MatplotlibSketch)
+
+
+        self.gridLayout_10.addWidget(self.widget_9, 5, 0, 1, 1)
+
         self.widget_8 = QWidget(self.scrollAreaWidgetContents)
         self.widget_8.setObjectName(u"widget_8")
         self.verticalLayout_26 = QVBoxLayout(self.widget_8)
@@ -1267,21 +1425,22 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_23.addWidget(self.IsiRumah)
 
-        self.webEngineView = QWebEngineView(self.widget_7)
-        self.webEngineView.setObjectName(u"webEngineView")
-        self.webEngineView.setUrl(QUrl(u"about:blank"))
+        self.LokasiGarisBesar = QWebEngineView(self.widget_7)
+        self.LokasiGarisBesar.setObjectName(u"LokasiGarisBesar")
+        self.LokasiGarisBesar.setUrl(QUrl(u"about:blank"))
 
-        self.horizontalLayout_23.addWidget(self.webEngineView)
+        self.horizontalLayout_23.addWidget(self.LokasiGarisBesar)
 
 
-        self.gridLayout_10.addWidget(self.widget_7, 3, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.widget_7, 4, 0, 1, 1)
 
         self.SubContentWidget_1 = QWidget(self.scrollAreaWidgetContents)
         self.SubContentWidget_1.setObjectName(u"SubContentWidget_1")
         self.gridLayout_11 = QGridLayout(self.SubContentWidget_1)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
-        self.FotoRumahLabel = QLabel(self.SubContentWidget_1)
+        self.FotoRumahLabel = QWebEngineView(self.SubContentWidget_1)
         self.FotoRumahLabel.setObjectName(u"FotoRumahLabel")
+        self.FotoRumahLabel.setUrl(QUrl(u"about:blank"))
 
         self.gridLayout_11.addWidget(self.FotoRumahLabel, 0, 1, 1, 1)
 
@@ -1292,28 +1451,6 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_10.addWidget(self.SubContentWidget_1, 1, 0, 1, 1)
-
-        self.widget_9 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_9.setObjectName(u"widget_9")
-        self.horizontalLayout_28 = QHBoxLayout(self.widget_9)
-        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.AlamatRumah = QLabel(self.widget_9)
-        self.AlamatRumah.setObjectName(u"AlamatRumah")
-
-        self.horizontalLayout_28.addWidget(self.AlamatRumah)
-
-        self.KontakPengurus = QLabel(self.widget_9)
-        self.KontakPengurus.setObjectName(u"KontakPengurus")
-
-        self.horizontalLayout_28.addWidget(self.KontakPengurus)
-
-        self.MatplotlibSketch = QLabel(self.widget_9)
-        self.MatplotlibSketch.setObjectName(u"MatplotlibSketch")
-
-        self.horizontalLayout_28.addWidget(self.MatplotlibSketch)
-
-
-        self.gridLayout_10.addWidget(self.widget_9, 4, 0, 1, 1)
 
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents)
 
@@ -1668,6 +1805,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.ContentFrame.setCurrentIndex(7)
+        self.TipeTipeBunga.setCurrentIndex(1)
         self.NotificatioFrame.setCurrentIndex(0)
 
 
@@ -1676,7 +1814,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText("")
+        self.LogoLabel.setText("")
         self.Minimize.setText("")
         self.Resize.setText("")
         self.CloseButton.setText("")
@@ -1688,23 +1826,25 @@ class Ui_MainWindow(object):
         self.Notifcation.setText("")
         self.User.setText("")
         self.Pengaturan.setText("")
-        self.Img_4.setText(QCoreApplication.translate("MainWindow", u"Image Goes Here", None))
         self.Desc_4.setText(QCoreApplication.translate("MainWindow", u"Text Goes Here", None))
-        self.Price_4.setText(QCoreApplication.translate("MainWindow", u"I'M NOT A BIG FAN OF THE GOVERMENT", None))
-        self.Img_3.setText(QCoreApplication.translate("MainWindow", u"Image Goes Here", None))
+        self.Price_4.setText(QCoreApplication.translate("MainWindow", u"Price and Check", None))
         self.Desc_3.setText(QCoreApplication.translate("MainWindow", u"Text Goes Here", None))
-        self.Price_3.setText(QCoreApplication.translate("MainWindow", u"I'M NOT A BIG FAN OF THE GOVERMENT", None))
-        self.Img_2.setText(QCoreApplication.translate("MainWindow", u"Image Goes Here", None))
+        self.Price_3.setText(QCoreApplication.translate("MainWindow", u"Price and Check", None))
         self.Desc_2.setText(QCoreApplication.translate("MainWindow", u"Text Goes Here", None))
-        self.Price_2.setText(QCoreApplication.translate("MainWindow", u"I'M NOT A BIG FAN OF THE GOVERMENT", None))
-        self.Img_1.setText(QCoreApplication.translate("MainWindow", u"Image Goes Here", None))
+        self.Price_2.setText(QCoreApplication.translate("MainWindow", u"Price and Check", None))
         self.Desc_1.setText(QCoreApplication.translate("MainWindow", u"Text Goes Here", None))
-        self.Price_1.setText(QCoreApplication.translate("MainWindow", u"I'M NOT A BIG FAN OF THE GOVERMENT", None))
-        self.UsernameLabel.setText(QCoreApplication.translate("MainWindow", u"USERNAME :", None))
+        self.Price_1.setText(QCoreApplication.translate("MainWindow", u"Price and Check", None))
+        self.PreviousButton.setText(QCoreApplication.translate("MainWindow", u"Previous", None))
+        self.NextButton.setText(QCoreApplication.translate("MainWindow", u"Next", None))
+        self.LoginText.setText(QCoreApplication.translate("MainWindow", u"LOGIN PAGE", None))
         self.LoginLabelStatus.setText(QCoreApplication.translate("MainWindow", u"StatusFlagHere", None))
         self.LoginButton.setText(QCoreApplication.translate("MainWindow", u"LOGIN", None))
+        self.GoResetPasswordButton.setText(QCoreApplication.translate("MainWindow", u"Reset Password", None))
         self.PasswordLabel.setText(QCoreApplication.translate("MainWindow", u"PASSWORD :", None))
-        self.LoginText.setText(QCoreApplication.translate("MainWindow", u"LOGIN PAGE", None))
+        self.UsernameLabel.setText(QCoreApplication.translate("MainWindow", u"USERNAME :", None))
+        self.ResetEmailLabel.setText(QCoreApplication.translate("MainWindow", u"E-Mail", None))
+        self.ResetFlagStatus.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.ProcessResetPassword.setText(QCoreApplication.translate("MainWindow", u"Reset Password", None))
         self.BuatAkunLabel.setText(QCoreApplication.translate("MainWindow", u"Buat Akun", None))
         self.BuatUsernameLabel.setText(QCoreApplication.translate("MainWindow", u"USERNAME :", None))
         self.BuatPasswordLabel.setText(QCoreApplication.translate("MainWindow", u"PASSWORD :", None))
@@ -1714,6 +1854,7 @@ class Ui_MainWindow(object):
         self.IsiDataLabel.setText(QCoreApplication.translate("MainWindow", u"Isi Data", None))
         self.NamaLabel.setText(QCoreApplication.translate("MainWindow", u"Nama Lengkap :", None))
         self.PekerjaanLabel.setText(QCoreApplication.translate("MainWindow", u"Pekerjaan :", None))
+        self.AlamatEmailLabel.setText(QCoreApplication.translate("MainWindow", u"Alamat Email :", None))
         self.GajiLabel.setText(QCoreApplication.translate("MainWindow", u"Range Gaji  :", None))
         self.TempatKerjaLabel.setText(QCoreApplication.translate("MainWindow", u"Tempat Kerja :", None))
         self.TanggunganLabel.setText(QCoreApplication.translate("MainWindow", u"Tanggungan :", None))
@@ -1721,13 +1862,6 @@ class Ui_MainWindow(object):
         self.TabunganLabel.setText(QCoreApplication.translate("MainWindow", u"Tabungan :", None))
         self.SavedFlag.setText(QCoreApplication.translate("MainWindow", u"SavedFlagHere", None))
         self.SimpanDataButton.setText(QCoreApplication.translate("MainWindow", u"Simpan Data", None))
-        self.PerhitunganKPRLabel.setText(QCoreApplication.translate("MainWindow", u"Perhitungan KPR", None))
-        self.PerhitunganKPRHargaPropertiLabel.setText(QCoreApplication.translate("MainWindow", u"Harga Properti :", None))
-        self.PerhitunganKPRUangMukaLabel.setText(QCoreApplication.translate("MainWindow", u"Jumlah Uang Muka yang Diberikan :", None))
-        self.PerhitunganKPRPersentaseSukuBungaLabel.setText(QCoreApplication.translate("MainWindow", u"Suka Bunga (Dalam Persen) :", None))
-        self.PerhitunganKPRMasaKreditLabel.setText(QCoreApplication.translate("MainWindow", u"Masa Kredit :", None))
-        self.PerhitunganKPRJangkaWaktuKreditLabel.setText(QCoreApplication.translate("MainWindow", u"Jangka Waktu Kredit :", None))
-        self.PerhitunganKPRCalculateButton.setText(QCoreApplication.translate("MainWindow", u"Hitung", None))
         self.OutputPerhitunganPageDetailPembayaranLabel.setText(QCoreApplication.translate("MainWindow", u"Detail Pembayaran :", None))
         self.EstimasiHargaBungaLabel.setText(QCoreApplication.translate("MainWindow", u"Estimasi Harga Pembayaran Bunga :", None))
         self.HargaJangkaTahunSetelahLabel.setText(QCoreApplication.translate("MainWindow", u"Harga Jangka Setelah", None))
@@ -1748,6 +1882,19 @@ class Ui_MainWindow(object):
         self.EstimasiBungaPinjamanLabel.setText(QCoreApplication.translate("MainWindow", u"Estimasi Bunga Pinjaman :", None))
         self.PenulisanHargaPinjamanPokokLabel.setText(QCoreApplication.translate("MainWindow", u"$MONEY$", None))
         self.PenulisanHargaEstimasiBungaPinjamanLabel.setText(QCoreApplication.translate("MainWindow", u"$MONEY$", None))
+        self.PerhitunganKPRLabel.setText(QCoreApplication.translate("MainWindow", u"Perhitungan KPR", None))
+        self.PerhitunganKPRHargaPropertiLabel.setText(QCoreApplication.translate("MainWindow", u"Harga Properti :", None))
+        self.PerhitunganKPRUangMukaLabel.setText(QCoreApplication.translate("MainWindow", u"Jumlah Uang Muka yang Diberikan :", None))
+        self.BungaTetapcheckBox.setText(QCoreApplication.translate("MainWindow", u"Bunga Tetap", None))
+        self.BungaBerjenjangcheckBox.setText(QCoreApplication.translate("MainWindow", u"Bunga Berjenjang", None))
+        self.PerhitunganKPRPersentaseSukuBungaLabel.setText(QCoreApplication.translate("MainWindow", u"Suka Bunga (Dalam Persen) :", None))
+        self.PerhitunganKPRMasaKreditLabel.setText(QCoreApplication.translate("MainWindow", u"Masa Kredit :", None))
+        self.PerhitunganKPRJangkaWaktuKreditLabel.setText(QCoreApplication.translate("MainWindow", u"Jangka Waktu Kredit :", None))
+        self.PerhitunganKPRPersentaseLamaKreditBerjenjangLabel.setText(QCoreApplication.translate("MainWindow", u"Masa Kredit Berjenjang", None))
+        self.PerhitunganKPRBungaPerTahunKreditBerjenjangLabel.setText(QCoreApplication.translate("MainWindow", u"Bunga Awal", None))
+        self.BungaEskalasiLabel.setText(QCoreApplication.translate("MainWindow", u"Eskalasi Bunga", None))
+        self.PerhitunganKPRJangkaWaktuKreditBerjenjangLabel.setText(QCoreApplication.translate("MainWindow", u"Masa KPR", None))
+        self.PerhitunganKPRCalculateButton.setText(QCoreApplication.translate("MainWindow", u"Hitung", None))
         self.DetailPembayaranPageLabel.setText(QCoreApplication.translate("MainWindow", u"Detail Pembayaran Bulan Ini :", None))
         self.GambarRumahImage.setText(QCoreApplication.translate("MainWindow", u"Gambar Rumah :", None))
         self.DeskripsiPembayaranLabel.setText(QCoreApplication.translate("MainWindow", u"Deskripsi", None))
@@ -1764,14 +1911,13 @@ class Ui_MainWindow(object):
         self.SettingsPageLabel.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.DarkModeLabel.setText(QCoreApplication.translate("MainWindow", u"Enable Dark Mode :", None))
         self.DarkModeCheckBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.GoBackToHomeButton.setText(QCoreApplication.translate("MainWindow", u"Go Back", None))
-        self.DeskripsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.IsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.FotoRumahLabel.setText(QCoreApplication.translate("MainWindow", u"Foto Rumah", None))
-        self.JudulRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.AlamatRumah.setText(QCoreApplication.translate("MainWindow", u"AlamatRumah", None))
         self.KontakPengurus.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.MatplotlibSketch.setText(QCoreApplication.translate("MainWindow", u"Tren Grafik Rumah", None))
+        self.GoBackToHomeButton.setText(QCoreApplication.translate("MainWindow", u"Go Back", None))
+        self.DeskripsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.IsiRumah.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.JudulRumah.setText(QCoreApplication.translate("MainWindow", u"Judul Rumah", None))
         self.ProfilePageExitButton.setText("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Profile Page", None))
         self.ProfileRegisterButton.setText(QCoreApplication.translate("MainWindow", u"Buat Akun", None))

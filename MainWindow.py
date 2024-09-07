@@ -2,6 +2,7 @@
 from FrontUIVer110 import Ui_MainWindow
 from Account import Account
 from PerhitunganKredit import HitungKredit
+from Houses import Housing
 import AppIcons_rc
 
 # Needed Libraries
@@ -22,12 +23,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.accounts = Account()
         self.kredit = HitungKredit()
+        self.yeah_houses = Housing()
 
         # Stored Flags
         self.is_login = False
         self.is_match = False
         self.is_this_button_clicked = False
         self.is_on_reset_password = False
+        self.Price_Button = 0
 
         # Variables to store the position of the mouse
         self._is_dragging = False
@@ -70,9 +73,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.BungaBerjenjangcheckBox.stateChanged.connect(self.set_page_layered_rate)
         self.PerhitunganKPRCalculateButton.clicked.connect(self.process_kredit_calculations)
 
+        # Housing
+        self.Price_1.clicked.connect(self.price_1_clicked)
+        self.Price_2.clicked.connect(self.price_2_clicked)
+        self.Price_3.clicked.connect(self.price_3_clicked)
+        self.Price_4.clicked.connect(self.price_4_clicked)
+
         # Set up the First Condition to Boot up the Program
         self.ContentFrame.setCurrentIndex(0)
         self.NotificatioFrame.hide()
+        self.read_random_houses()
 
 # Program Panel Functions______________________________________________________________________________________________________________________
     def mousePressEvent(self, event):
@@ -143,9 +153,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         animation.start()
 
 # Page Switching Functions______________________________________________________________________________________________________________________
-    def list_rumah_page(self):
-        self.ContentFrame.setCurrentIndex(0)
-
     def beli_page(self):
         self.ContentFrame.setCurrentIndex(4)
 
@@ -391,6 +398,168 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.PenulisanHargaPinjamanPokokLabel.setText("Rp. " + str(parsed_data[0]))
             self.PenulisanHargaEstimasiBungaPinjamanLabel.setText("Rp. " + str(parsed_data[6]))
             
+# Housing Display Functions______________________________________________________________________________________________________________________
+
+    def list_rumah_page(self):
+        self.ContentFrame.setCurrentIndex(0)
+
+    def price_1_clicked(self):
+        self.Price_Button = 1
+        self.displaying_house_context()
+
+    def price_2_clicked(self):
+        self.Price_Button = 2
+        self.displaying_house_context()
+
+    def price_3_clicked(self):
+        self.Price_Button = 3
+        self.displaying_house_context()
+
+    def price_4_clicked(self):
+        self.Price_Button = 4
+        self.displaying_house_context()
+
+    def displaying_house_context(self):
+        if self.Price_Button == 1:
+            self.ContentFrame.setCurrentIndex(7)
+            exported_data = self.yeah_houses.get_houses(self.house_data_entry_1[3])
+
+            for _ in exported_data:
+                title = exported_data[1]
+                price = exported_data[0]
+                img_source = exported_data[3]
+                address = exported_data[2]
+                landsize = exported_data[4]
+                building_size = exported_data[5]
+                certificate = exported_data[6]
+                electricity = exported_data[7]
+                property_condition = exported_data[8]
+                floors = exported_data[9]
+                garages = exported_data[10]
+                bedrooms = exported_data[11]
+                bathrooms = exported_data[12]
+                facilities = exported_data[13]
+
+                # Do something with the elements
+
+            self.JudulRumah.setText(f"{title}\n\n{price}")
+            self.FotoRumahLabel.load(QUrl(img_source))
+            self.AlamatRumah.setText(address)
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
+
+        elif self.Price_Button == 2:
+            self.ContentFrame.setCurrentIndex(7)
+            exported_data = self.yeah_houses.get_houses(self.house_data_entry_2[3])
+
+            for _ in exported_data:
+                title = exported_data[1]
+                price = exported_data[0]
+                img_source = exported_data[3]
+                address = exported_data[2]
+                landsize = exported_data[4]
+                building_size = exported_data[5]
+                certificate = exported_data[6]
+                electricity = exported_data[7]
+                property_condition = exported_data[8]
+                floors = exported_data[9]
+                garages = exported_data[10]
+                bedrooms = exported_data[11]
+                bathrooms = exported_data[12]
+                facilities = exported_data[13]
+
+                # Do something with the elements
+
+            self.JudulRumah.setText(f"{title}\n\n{price}")
+            self.FotoRumahLabel.load(QUrl(img_source))
+            self.AlamatRumah.setText(address)
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
+
+        elif self.Price_Button == 3:
+            self.ContentFrame.setCurrentIndex(7)
+            exported_data = self.yeah_houses.get_houses(self.house_data_entry_3[3])
+            
+            for _ in exported_data:
+                title = exported_data[1]
+                price = exported_data[0]
+                img_source = exported_data[3]
+                address = exported_data[2]
+                landsize = exported_data[4]
+                building_size = exported_data[5]
+                certificate = exported_data[6]
+                electricity = exported_data[7]
+                property_condition = exported_data[8]
+                floors = exported_data[9]
+                garages = exported_data[10]
+                bedrooms = exported_data[11]
+                bathrooms = exported_data[12]
+                facilities = exported_data[13]
+
+                # Do something with the elements
+
+            self.JudulRumah.setText(f"{title}\n\n{price}")
+            self.FotoRumahLabel.load(QUrl(img_source))
+            self.AlamatRumah.setText(address)
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nKondisi: {property_condition}\nLantai: {floors}")
+            self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
+
+        elif self.Price_Button == 4:
+            self.ContentFrame.setCurrentIndex(7)
+            exported_data = self.yeah_houses.get_houses(self.house_data_entry_4[3])     
+
+            for _ in exported_data:
+                title = exported_data[1]
+                price = exported_data[0]
+                img_source = exported_data[3]
+                address = exported_data[2]
+                landsize = exported_data[4]
+                building_size = exported_data[5]
+                certificate = exported_data[6]
+                electricity = exported_data[7]
+                # property_condition = exported_data[8]
+                floors = exported_data[8]
+                garages = exported_data[9]
+                bedrooms = exported_data[10]
+                bathrooms = exported_data[11]
+                facilities = exported_data[12]
+
+                # Do something with the elements
+
+            self.JudulRumah.setText(f"{title}\n\n{price}")
+            self.FotoRumahLabel.load(QUrl(img_source))
+            self.AlamatRumah.setText(address)
+            self.DeskripsiRumah.setText(f"Ukuran Tanah: {landsize}\nLuas Bangunan: {building_size}\nSertifikat: {certificate}\nBeban Listrik: {electricity}\nLantai: {floors}")
+            self.IsiRumah.setText(f"Garages: {garages}\nBedrooms: {bedrooms}\nBathrooms: {bathrooms}\nFacilities: {facilities}")
+
+
+    def read_random_houses(self):
+        for i in range(4):
+            house_data = self.yeah_houses.read_random_houses()
+            if i == 0:
+                self.house_data_entry_1 = house_data
+                self.Img_1.load(QUrl(self.house_data_entry_1[0]))
+                self.Desc_1.setText(self.house_data_entry_1[1])
+                self.Desc_1.setWordWrap(True)
+                self.Price_1.setText(f"{self.house_data_entry_1[2]}\n\nLihat ini!")
+            elif i == 1:
+                self.house_data_entry_2 = house_data
+                self.Img_2.load(QUrl(self.house_data_entry_2[0]))
+                self.Desc_2.setText(self.house_data_entry_2[1])
+                self.Desc_2.setWordWrap(True)
+                self.Price_2.setText(f"{self.house_data_entry_2[2]}\n\nLihat ini!")
+            elif i == 2:
+                self.house_data_entry_3 = house_data
+                self.Img_3.load(QUrl(self.house_data_entry_3[0]))
+                self.Desc_3.setText(self.house_data_entry_3[1])
+                self.Desc_3.setWordWrap(True)
+                self.Price_3.setText(f"{self.house_data_entry_3[2]}\n\nLihat ini!")
+            elif i == 3:
+                self.house_data_entry_4 = house_data
+                self.Img_4.load(QUrl(self.house_data_entry_4[0]))
+                self.Desc_4.setText(self.house_data_entry_4[1])
+                self.Desc_4.setWordWrap(True)
+                self.Price_4.setText(f"{self.house_data_entry_4[2]}\n\nLihat ini!")
 
 if __name__ == "__main__":
     import sys

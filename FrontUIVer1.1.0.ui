@@ -31,13 +31,6 @@
 	margin: 0;
 	color: #000;
 }
-
-#ContentWindow #ProgramPanelContainer #UserControlPanelContainer{
-	background-color:#1619d;
-}
-#MoreMenuContainer{
-	background-color:#1f232a;
-}
 QPushButton{
 	text-align: left;
 	padding: 3px 5px;
@@ -106,7 +99,7 @@ QPushButton{
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="LogoLabel">
                <property name="text">
                 <string/>
                </property>
@@ -600,7 +593,7 @@ QPushButton{
           <item>
            <widget class="QStackedWidget" name="ContentFrame">
             <property name="currentIndex">
-             <number>0</number>
+             <number>7</number>
             </property>
             <widget class="QWidget" name="ContentPage">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -614,8 +607,8 @@ QPushButton{
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>723</width>
-                   <height>750</height>
+                   <width>700</width>
+                   <height>758</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
@@ -629,9 +622,11 @@ QPushButton{
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_18">
                      <item>
-                      <widget class="QLabel" name="Img_4">
-                       <property name="text">
-                        <string>Image Goes Here</string>
+                      <widget class="QWebEngineView" name="Img_4">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
                        </property>
                       </widget>
                      </item>
@@ -643,9 +638,9 @@ QPushButton{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="Price_4">
+                      <widget class="QPushButton" name="Price_4">
                        <property name="text">
-                        <string>I'M NOT A BIG FAN OF THE GOVERMENT</string>
+                        <string>Price and Check</string>
                        </property>
                       </widget>
                      </item>
@@ -662,9 +657,11 @@ QPushButton{
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_19">
                      <item>
-                      <widget class="QLabel" name="Img_3">
-                       <property name="text">
-                        <string>Image Goes Here</string>
+                      <widget class="QWebEngineView" name="Img_3">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
                        </property>
                       </widget>
                      </item>
@@ -676,9 +673,9 @@ QPushButton{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="Price_3">
+                      <widget class="QPushButton" name="Price_3">
                        <property name="text">
-                        <string>I'M NOT A BIG FAN OF THE GOVERMENT</string>
+                        <string>Price and Check</string>
                        </property>
                       </widget>
                      </item>
@@ -695,9 +692,11 @@ QPushButton{
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_20">
                      <item>
-                      <widget class="QLabel" name="Img_2">
-                       <property name="text">
-                        <string>Image Goes Here</string>
+                      <widget class="QWebEngineView" name="Img_2">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
                        </property>
                       </widget>
                      </item>
@@ -709,9 +708,9 @@ QPushButton{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="Price_2">
+                      <widget class="QPushButton" name="Price_2">
                        <property name="text">
-                        <string>I'M NOT A BIG FAN OF THE GOVERMENT</string>
+                        <string>Price and Check</string>
                        </property>
                       </widget>
                      </item>
@@ -728,9 +727,11 @@ QPushButton{
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_21">
                      <item>
-                      <widget class="QLabel" name="Img_1">
-                       <property name="text">
-                        <string>Image Goes Here</string>
+                      <widget class="QWebEngineView" name="Img_1">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
                        </property>
                       </widget>
                      </item>
@@ -742,9 +743,29 @@ QPushButton{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="Price_1">
+                      <widget class="QPushButton" name="Price_1">
                        <property name="text">
-                        <string>I'M NOT A BIG FAN OF THE GOVERMENT</string>
+                        <string>Price and Check</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="4" column="0" alignment="Qt::AlignBottom">
+                   <widget class="QWidget" name="HomeNavigateContainer" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <item alignment="Qt::AlignLeft">
+                      <widget class="QPushButton" name="PreviousButton">
+                       <property name="text">
+                        <string>Previous</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item alignment="Qt::AlignRight">
+                      <widget class="QPushButton" name="NextButton">
+                       <property name="text">
+                        <string>Next</string>
                        </property>
                       </widget>
                      </item>
@@ -771,6 +792,130 @@ QPushButton{
               <property name="bottomMargin">
                <number>0</number>
               </property>
+              <item row="3" column="0">
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <widget class="QWidget" name="LoginTextContainer" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item alignment="Qt::AlignLeft|Qt::AlignTop">
+                  <widget class="QLabel" name="LoginText">
+                   <property name="text">
+                    <string>LOGIN PAGE</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="4" column="1">
+               <widget class="QWidget" name="LoginButtonContainer" native="true">
+                <layout class="QGridLayout" name="gridLayout_12">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="LoginLabelStatus">
+                   <property name="text">
+                    <string>StatusFlagHere</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="LoginButton">
+                   <property name="text">
+                    <string>LOGIN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QPushButton" name="GoResetPasswordButton">
+                   <property name="text">
+                    <string>Reset Password</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Expanding</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="1">
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>60</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="3" column="1" alignment="Qt::AlignTop">
+               <widget class="QWidget" name="PasswordContainer" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item alignment="Qt::AlignTop">
+                  <widget class="QLabel" name="PasswordLabel">
+                   <property name="text">
+                    <string>PASSWORD :</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="PasswordBox">
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
               <item row="2" column="1">
                <widget class="QWidget" name="UsernameContainer" native="true">
                 <property name="sizePolicy">
@@ -806,38 +951,18 @@ QPushButton{
                 </layout>
                </widget>
               </item>
-              <item row="4" column="1">
-               <widget class="QWidget" name="LoginButtonContainer" native="true">
+              <item row="5" column="1" alignment="Qt::AlignTop">
+               <widget class="QWidget" name="ResetPasswordContainer" native="true">
                 <layout class="QVBoxLayout" name="verticalLayout_7">
                  <item>
-                  <widget class="QLabel" name="LoginLabelStatus">
+                  <widget class="QLabel" name="ResetEmailLabel">
                    <property name="text">
-                    <string>StatusFlagHere</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QPushButton" name="LoginButton">
-                   <property name="text">
-                    <string>LOGIN</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="3" column="1" alignment="Qt::AlignTop">
-               <widget class="QWidget" name="PasswordContainer" native="true">
-                <layout class="QVBoxLayout" name="verticalLayout_8">
-                 <item alignment="Qt::AlignTop">
-                  <widget class="QLabel" name="PasswordLabel">
-                   <property name="text">
-                    <string>PASSWORD :</string>
+                    <string>E-Mail</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTextEdit" name="PasswordBox">
+                  <widget class="QTextEdit" name="EmailBox">
                    <property name="maximumSize">
                     <size>
                      <width>300</width>
@@ -846,82 +971,22 @@ QPushButton{
                    </property>
                   </widget>
                  </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <spacer name="horizontalSpacer_5">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Fixed</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="0" column="1">
-               <widget class="QWidget" name="LoginTextContainer" native="true">
-                <layout class="QVBoxLayout" name="verticalLayout_6">
-                 <item alignment="Qt::AlignLeft|Qt::AlignTop">
-                  <widget class="QLabel" name="LoginText">
+                 <item>
+                  <widget class="QLabel" name="ResetFlagStatus">
                    <property name="text">
-                    <string>LOGIN PAGE</string>
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="ProcessResetPassword">
+                   <property name="text">
+                    <string>Reset Password</string>
                    </property>
                   </widget>
                  </item>
                 </layout>
                </widget>
-              </item>
-              <item row="5" column="1">
-               <spacer name="verticalSpacer_2">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Expanding</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="1" column="1">
-               <spacer name="verticalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Preferred</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>60</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="3" column="2">
-               <spacer name="horizontalSpacer_6">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
               </item>
              </layout>
             </widget>
@@ -1145,6 +1210,29 @@ QPushButton{
                       </layout>
                      </widget>
                     </item>
+                    <item>
+                     <widget class="QWidget" name="AlamatEmailContainer" native="true">
+                      <layout class="QVBoxLayout" name="verticalLayout_2">
+                       <item>
+                        <widget class="QLabel" name="AlamatEmailLabel">
+                         <property name="text">
+                          <string>Alamat Email :</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QTextEdit" name="AlamatEmailBox">
+                         <property name="maximumSize">
+                          <size>
+                           <width>300</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
                     <item alignment="Qt::AlignTop">
                      <widget class="QWidget" name="GajiContainer" native="true">
                       <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1302,150 +1390,21 @@ QPushButton{
              </layout>
             </widget>
             <widget class="QWidget" name="PerhitunganKPRPage">
-             <layout class="QHBoxLayout" name="horizontalLayout_25">
-              <item>
-               <widget class="QWidget" name="InputPerhitunganPageContainer" native="true">
-                <layout class="QVBoxLayout" name="verticalLayout_44">
-                 <item>
-                  <widget class="QWidget" name="PerhitunganKPRContainer" native="true">
-                   <layout class="QVBoxLayout" name="verticalLayout_45">
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRLabel">
-                      <property name="text">
-                       <string>Perhitungan KPR</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignTop">
-                  <widget class="QWidget" name="PerhitunganKPRHargaContainer" native="true">
-                   <layout class="QVBoxLayout" name="verticalLayout_46">
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRHargaPropertiLabel">
-                      <property name="text">
-                       <string>Harga Properti :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTextEdit" name="PerhitunganKPRUangMukaTextEdit">
-                      <property name="maximumSize">
-                       <size>
-                        <width>300</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRUangMukaLabel">
-                      <property name="text">
-                       <string>Jumlah Uang Muka yang Diberikan :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTextEdit" name="PerhitunganKPRHargaPropertiTextEdit">
-                      <property name="maximumSize">
-                       <size>
-                        <width>300</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignTop">
-                  <widget class="QWidget" name="PerhitunganKPRSukuBungaContainer" native="true">
-                   <layout class="QVBoxLayout" name="verticalLayout_47">
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRPersentaseSukuBungaLabel">
-                      <property name="text">
-                       <string>Suka Bunga (Dalam Persen) :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTextEdit" name="PerhitunganKPRMasaKreditLabelTextEdit">
-                      <property name="maximumSize">
-                       <size>
-                        <width>300</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRMasaKreditLabel">
-                      <property name="text">
-                       <string>Masa Kredit :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTextEdit" name="PerhitunganKPRJangkaWaktuKreditTextEdit">
-                      <property name="maximumSize">
-                       <size>
-                        <width>300</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="PerhitunganKPRJangkaWaktuKreditLabel">
-                      <property name="text">
-                       <string>Jangka Waktu Kredit :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QTextEdit" name="PerhitunganKPRPersentaseSukuBungaLabelTextEdit">
-                      <property name="maximumSize">
-                       <size>
-                        <width>300</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignTop">
-                  <widget class="QWidget" name="PerhitunganKPRCalculateButtonContainer" native="true">
-                   <layout class="QVBoxLayout" name="verticalLayout_48">
-                    <item>
-                     <widget class="QPushButton" name="PerhitunganKPRCalculateButton">
-                      <property name="text">
-                       <string>Hitung</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_9">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="0" column="3">
+               <spacer name="horizontalSpacer_9">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
-              <item>
+              <item row="0" column="2">
                <widget class="QWidget" name="OutputPerhitunganPageContainer" native="true">
                 <layout class="QVBoxLayout" name="verticalLayout_49">
                  <item>
@@ -1651,6 +1610,258 @@ QPushButton{
                  </item>
                 </layout>
                </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QWidget" name="InputPerhitunganPageContainer" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_44">
+                 <item>
+                  <widget class="QWidget" name="PerhitunganKPRContainer" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_45">
+                    <item>
+                     <widget class="QLabel" name="PerhitunganKPRLabel">
+                      <property name="text">
+                       <string>Perhitungan KPR</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignTop">
+                  <widget class="QWidget" name="PerhitunganKPRHargaContainer" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_46">
+                    <item>
+                     <widget class="QLabel" name="PerhitunganKPRHargaPropertiLabel">
+                      <property name="text">
+                       <string>Harga Properti :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTextEdit" name="PerhitunganKPRUangMukaTextEdit">
+                      <property name="maximumSize">
+                       <size>
+                        <width>300</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="PerhitunganKPRUangMukaLabel">
+                      <property name="text">
+                       <string>Jumlah Uang Muka yang Diberikan :</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTextEdit" name="PerhitunganKPRHargaPropertiTextEdit">
+                      <property name="maximumSize">
+                       <size>
+                        <width>300</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="BungaTetapcheckBox">
+                      <property name="text">
+                       <string>Bunga Tetap</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="BungaBerjenjangcheckBox">
+                      <property name="text">
+                       <string>Bunga Berjenjang</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignTop">
+                  <widget class="QStackedWidget" name="TipeTipeBunga">
+                   <property name="currentIndex">
+                    <number>1</number>
+                   </property>
+                   <widget class="QWidget" name="page_3">
+                    <layout class="QVBoxLayout" name="verticalLayout_30">
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRPersentaseSukuBungaLabel">
+                       <property name="text">
+                        <string>Suka Bunga (Dalam Persen) :</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="PerhitunganKPRMasaKreditLabelTextEdit">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRMasaKreditLabel">
+                       <property name="text">
+                        <string>Masa Kredit :</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="PerhitunganKPRJangkaWaktuKreditTextEdit">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRJangkaWaktuKreditLabel">
+                       <property name="text">
+                        <string>Jangka Waktu Kredit :</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="PerhitunganKPRPersentaseSukuBungaLabelTextEdit">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="page_4">
+                    <layout class="QVBoxLayout" name="verticalLayout_39">
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRPersentaseLamaKreditBerjenjangLabel">
+                       <property name="text">
+                        <string>Masa Kredit Berjenjang</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="spinBox">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="minimum">
+                        <number>1</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRBungaPerTahunKreditBerjenjangLabel">
+                       <property name="text">
+                        <string>Bunga Awal</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="PerhitunganKPRPersentaseLamaKreditBerjenjangBox">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="BungaEskalasiLabel">
+                       <property name="text">
+                        <string>Eskalasi Bunga</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="EskalasiBungaBox">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="PerhitunganKPRJangkaWaktuKreditBerjenjangLabel">
+                       <property name="text">
+                        <string>Masa KPR</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="PerhitunganKPRJangkaWaktuMasaKreditBerjenjang">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item alignment="Qt::AlignTop">
+                  <widget class="QWidget" name="PerhitunganKPRCalculateButtonContainer" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_48">
+                    <item>
+                     <widget class="QPushButton" name="PerhitunganKPRCalculateButton">
+                      <property name="text">
+                       <string>Hitung</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_9">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_10">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -1895,78 +2106,12 @@ QPushButton{
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>723</width>
-                   <height>750</height>
+                   <width>700</width>
+                   <height>758</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_10">
-                  <item row="0" column="0" alignment="Qt::AlignTop">
-                   <widget class="QWidget" name="widget_8" native="true">
-                    <layout class="QVBoxLayout" name="verticalLayout_26">
-                     <item>
-                      <widget class="QPushButton" name="GoBackToHomeButton">
-                       <property name="text">
-                        <string>Go Back</string>
-                       </property>
-                       <property name="icon">
-                        <iconset resource="AppIcons.qrc">
-                         <normaloff>:/FeatherIcons/feather/arrow-left-circle.svg</normaloff>:/FeatherIcons/feather/arrow-left-circle.svg</iconset>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QWidget" name="widget_7" native="true">
-                    <layout class="QHBoxLayout" name="horizontalLayout_23">
-                     <item>
-                      <widget class="QLabel" name="DeskripsiRumah">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="IsiRumah">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QWebEngineView" name="webEngineView">
-                       <property name="url">
-                        <url>
-                         <string>about:blank</string>
-                        </url>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QWidget" name="SubContentWidget_1" native="true">
-                    <layout class="QGridLayout" name="gridLayout_11">
-                     <item row="0" column="1">
-                      <widget class="QLabel" name="FotoRumahLabel">
-                       <property name="text">
-                        <string>Foto Rumah</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="JudulRumah">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
+                  <item row="5" column="0">
                    <widget class="QWidget" name="widget_9" native="true">
                     <layout class="QHBoxLayout" name="horizontalLayout_28">
                      <item>
@@ -1987,6 +2132,74 @@ QPushButton{
                       <widget class="QLabel" name="MatplotlibSketch">
                        <property name="text">
                         <string>Tren Grafik Rumah</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0" alignment="Qt::AlignTop">
+                   <widget class="QWidget" name="widget_8" native="true">
+                    <layout class="QVBoxLayout" name="verticalLayout_26">
+                     <item>
+                      <widget class="QPushButton" name="GoBackToHomeButton">
+                       <property name="text">
+                        <string>Go Back</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="AppIcons.qrc">
+                         <normaloff>:/FeatherIcons/feather/arrow-left-circle.svg</normaloff>:/FeatherIcons/feather/arrow-left-circle.svg</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QWidget" name="widget_7" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_23">
+                     <item>
+                      <widget class="QLabel" name="DeskripsiRumah">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="IsiRumah">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QWebEngineView" name="LokasiGarisBesar">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QWidget" name="SubContentWidget_1" native="true">
+                    <layout class="QGridLayout" name="gridLayout_11">
+                     <item row="0" column="1">
+                      <widget class="QWebEngineView" name="FotoRumahLabel">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="JudulRumah">
+                       <property name="text">
+                        <string>Judul Rumah</string>
                        </property>
                       </widget>
                      </item>

@@ -1,20 +1,25 @@
-import json
 import numpy as np
+import firebase_admin
+from firebase_admin import credentials, db
+
+creds = credentials.Certificate("credentials.json")
+firebase_admin.initialize_app(creds, {
+    "databaseURL":"https://house-pricing-database-6f957-default-rtdb.asia-southeast1.firebasedatabase.app/"
+})
 
 class Account():
+    def __init__(self):
+        self.id_number = None
 
-    def __init__(self) -> None:
-        pass
-
+    # Get user credentials info
     def read_credentials(self):
-        with open("accounts_credentials.json", "r") as file:
-            accounts_credentials = json.load(file)
-            file.seek(0)
-
-            for _ in accounts_credentials:
-                if accounts_credentials["unique_id"] == self.id_number:
-                    return accounts_credentials["username"]
-            
+        ref = db.reference("account_credentials")
+        accounts_credentials = ref.get()
+        
+        for account in accounts_credentials.items():
+            if account["unique_id"] == self.id_number:
+                return account["username"]
+        return None
 
     # Create Account Functions
     def create_account_username_password(self, parse_username, parse_password, parse_repassword):
@@ -29,16 +34,14 @@ class Account():
         }
 
         if account_credentials["password"] == retype_password:
-            with open("accounts_credentials.json", "a") as file:
-                json.dump(account_credentials, file)
+            ref = db.reference("account_credentials")
+            ref.push(account_credentials)
             return True
-        
         else:
             return False
 
     # Create Account Data Functions    
     def create_account_data(self, parse_nama, parse_pekerjaan, parse_email, parse_gaji, parse_tempat_kerja, parse_tanggungan, parse_cicilan, parse_tabungan):
-        
         account_data = {
             "unique_id": self.id_number, # Should Identify the Account of an user ideally yeah?
             "full_name": parse_nama,
@@ -51,76 +54,59 @@ class Account():
             "tabungan": parse_tabungan
         }
 
-        with open("accounts_data.json", "a") as file:
-            json.dump(account_data, file)
+        ref = db.reference("account_data")
+        ref.push(account_data)
         return True
     
     # Login Functions
     def user_login(self, parsed_username, parsed_password):
+        accounts_ref = db.reference("account_credentials")
+        account_credentials = accounts_ref.get()
         
-        username = parsed_username
-        password = parsed_password
-        with open("accounts_credentials.json", "r") as file:
-            credentials = json.load(file)
-            if credentials["username"] == username and credentials["password"] == password:
-                self.id_number = credentials["unique_id"]
+        for account_data in account_credentials.items():
+            if account_data["username"] == parsed_username and account_data["password"] == parsed_password:
+                self.id_number = account_data["unique_id"]
                 return True
-            else:
-                return False
-            
+        return False
+        
     # Changing User Data Functions
     def change_user_data(self, parse_nama, parse_pekerjaan, parse_email, parse_gaji, parse_tempat_kerja, parse_tanggungan, parse_cicilan, parse_tabungan):
+        ref = db.reference("account_data")
+        accounts_data = ref.get()
         
-        account_data = {
-            "unique_id": self.id_number, # Should Identify the Account of an user ideally yeah?
-            "full_name": parse_nama,
-            "email": parse_email,
-            "job": parse_pekerjaan,
-            "salary": parse_gaji,
-            "job_address": parse_tempat_kerja,
-            "tanggungan": parse_tanggungan,
-            "beban_cicilan": parse_cicilan,
-            "tabungan": parse_tabungan
-        }
+        for account_id, account in accounts_data.items():
+            if account["unique_id"] == self.id_number:
+                updated_account_data = {
+                    "unique_id": self.id_number,
+                    "full_name": parse_nama,
+                    "email": parse_email,
+                    "job": parse_pekerjaan,
+                    "salary": parse_gaji,
+                    "job_address": parse_tempat_kerja,
+                    "tanggungan": parse_tanggungan,
+                    "beban_cicilan": parse_cicilan,
+                    "tabungan": parse_tabungan
+                }
+                ref.child(account_id).update(updated_account_data)
+                return True
 
-        with open("accounts_data.json", "r+") as file:
-            accounts_data = json.load(file)
-            file.seek(0)
-            
-            for account in accounts_data:
-                if account["unique_id"] == self.id_number:
-                    account.update(account_data)
-            
-            file.truncate()
-            json.dump(accounts_data, file)
-
-        return True
-        
-    # Ressetting User Password Functions
+    # Search email
     def search_user_email(self, parse_email):
+        ref = db.reference("account_data")
+        accounts_data = ref.get()
         
-        with open("accounts_data.json", "r") as file:
-            data = json.load(file)
-            file.seek(0)
-            
-            for _ in data:
-                if data["email"] == parse_email:
-                    return True
-            else:
-                return False
-            
+        for account in accounts_data.items():
+            if account["email"] == parse_email:
+                return True
+            return False
+
+    # Reset password function
     def reset_user_password(self, parse_password, parse_repassword):
-        
         if parse_password == parse_repassword:
-            with open("accounts_credentials.json", "r+") as file:
-                credentials = json.load(file)
-                file.seek(0)
-            
-                for account in credentials:
-                    account["password"] = parse_password
-            
-                file.truncate()
-                json.dump(account, file)
-            return True
-        else:
+            ref = db.reference("account_credentials")
+            accounts_credentials = ref.get()
+            for account_id, account in accounts_credentials.items():
+                if account["unique_id"] == self.id_number:
+                    ref.child(account_id).update({"password": parse_password})
+                    return True
             return False
